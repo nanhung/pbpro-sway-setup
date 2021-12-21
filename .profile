@@ -1,6 +1,6 @@
-export MOZ_ENABLE_WAYLAND=1
-export XDG_CURRENT_DESKTOP=sway
-export XDG_SESSION_TYPE=wayland
-export WLR_NO_HARDWARE_CURSORS=1
-#export WLR_NO_HARDWARE_CURSORS=0
-export WLR_RENDERER_ALLOW_SOFTWARE=1
+# enable gnome-keyring-daemon
+eval $(gnome-keyring-daemon --start)
+export SSH_AUTH_SOCK
+
+# expand user path to local/bin for xterm link
+export PATH=$HOME/.local/bin:$PATH
