@@ -1,0 +1,139 @@
+{
+  "Items" : [
+    {
+      "GUID" : "forum.manjaro.org-topic-82660",
+      "URL" : "https://forum.manjaro.org/t/manjaro-arm-beta-15-with-phosh-pinephone/82660",
+      "Title" : "Manjaro ARM Beta 15 with Phosh (PinePhone)",
+      "Category" : "ARM Releases",
+      "PublishedDate" : "2021-09-15T12:18:20Z",
+      "PublishedDateUnix" : 1631708300,
+      "NotificationSent" : true
+    },
+    {
+      "GUID" : "forum.manjaro.org-topic-84576",
+      "URL" : "https://forum.manjaro.org/t/arm-stable-update-2021-09-28-firefox-thunderbird-libreoffice-electron-element-and-kernels/84576",
+      "Title" : "[ARM Stable Update] 2021-09-28 - Firefox, Thunderbird, LibreOffice, Electron, Element and Kernels",
+      "Category" : "ARM Stable Updates",
+      "PublishedDate" : "2021-09-28T21:32:55Z",
+      "PublishedDateUnix" : 1632864775,
+      "NotificationSent" : true
+    },
+    {
+      "GUID" : "forum.manjaro.org-topic-84677",
+      "URL" : "https://forum.manjaro.org/t/manjaro-arm-beta-16-with-phosh-pinephone/84677",
+      "Title" : "Manjaro ARM Beta 16 with Phosh (PinePhone)",
+      "Category" : "ARM Releases",
+      "PublishedDate" : "2021-09-29T19:05:04Z",
+      "PublishedDateUnix" : 1632942304,
+      "NotificationSent" : true
+    },
+    {
+      "GUID" : "forum.manjaro.org-topic-86578",
+      "URL" : "https://forum.manjaro.org/t/arm-stable-update-2021-10-15-qt-firefox-uboot-vivaldi-and-kernels/86578",
+      "Title" : "[ARM Stable Update] 2021-10-15 - QT, Firefox, Uboot, Vivaldi and Kernels",
+      "Category" : "ARM Stable Updates",
+      "PublishedDate" : "2021-10-15T20:27:57Z",
+      "PublishedDateUnix" : 1634329677,
+      "NotificationSent" : true
+    },
+    {
+      "GUID" : "forum.manjaro.org-topic-86872",
+      "URL" : "https://forum.manjaro.org/t/manjaro-arm-21-10-released/86872",
+      "Title" : "Manjaro ARM 21.10 released!",
+      "Category" : "ARM Releases",
+      "PublishedDate" : "2021-10-17T17:57:38Z",
+      "PublishedDateUnix" : 1634493458,
+      "NotificationSent" : true
+    },
+    {
+      "GUID" : "forum.manjaro.org-topic-86898",
+      "URL" : "https://forum.manjaro.org/t/manjaro-arm-beta-17-with-phosh-pinephone/86898",
+      "Title" : "Manjaro ARM Beta 17 with Phosh (PinePhone)",
+      "Category" : "ARM Releases",
+      "PublishedDate" : "2021-10-17T19:53:49Z",
+      "PublishedDateUnix" : 1634500429,
+      "NotificationSent" : true
+    },
+    {
+      "GUID" : "forum.manjaro.org-topic-89281",
+      "URL" : "https://forum.manjaro.org/t/arm-stable-update-2021-11-06-firefox-thunderbird-plasma-libreoffice-and-kernels/89281",
+      "Title" : "[ARM Stable Update] 2021-11-06 - Firefox, Thunderbird, Plasma, LibreOffice and Kernels",
+      "Category" : "ARM Stable Updates",
+      "PublishedDate" : "2021-11-06T12:48:56Z",
+      "PublishedDateUnix" : 1636202936,
+      "NotificationSent" : true
+    },
+    {
+      "GUID" : "forum.manjaro.org-topic-90369",
+      "URL" : "https://forum.manjaro.org/t/manjaro-arm-beta-18-with-phosh-pinephone/90369",
+      "Title" : "Manjaro ARM Beta 18 with Phosh (PinePhone)",
+      "Category" : "ARM Releases",
+      "PublishedDate" : "2021-11-14T21:18:09Z",
+      "PublishedDateUnix" : 1636924689,
+      "NotificationSent" : true
+    },
+    {
+      "GUID" : "forum.manjaro.org-topic-91689",
+      "URL" : "https://forum.manjaro.org/t/manjaro-arm-beta8-with-plasma-mobile-pinephone/91689",
+      "Title" : "Manjaro ARM Beta8 with Plasma-Mobile (Pinephone)",
+      "Category" : "ARM Releases",
+      "PublishedDate" : "2021-11-22T16:25:44Z",
+      "PublishedDateUnix" : 1637598344,
+      "NotificationSent" : true
+    },
+    {
+      "GUID" : "forum.manjaro.org-topic-92835",
+      "URL" : "https://forum.manjaro.org/t/arm-stable-update-2021-11-30-gnome-41-pamac-lxqt-1-0-firefox-and-kernels/92835",
+      "Title" : "[ARM Stable Update] 2021-11-30 - Gnome 41, Pamac, LXQT 1.0, Firefox and Kernels",
+      "Category" : "ARM Stable Updates",
+      "PublishedDate" : "2021-11-30T22:18:45Z",
+      "PublishedDateUnix" : 1638310725,
+      "NotificationSent" : true
+    },
+    {
+      "GUID" : "forum.manjaro.org-topic-93221",
+      "URL" : "https://forum.manjaro.org/t/manjaro-arm-beta-19-with-phosh-pinephone-pinephonepro/93221",
+      "Title" : "Manjaro ARM Beta 19 with Phosh (PinePhone / PinephonePro)",
+      "Category" : "ARM Releases",
+      "PublishedDate" : "2021-12-03T22:08:18Z",
+      "PublishedDateUnix" : 1638569298,
+      "NotificationSent" : true
+    },
+    {
+      "GUID" : "forum.manjaro.org-topic-94518",
+      "URL" : "https://forum.manjaro.org/t/arm-stable-update-2021-12-13-firefox-kde-gear-thunderbird-libreoffice-icu-and-kernels/94518",
+      "Title" : "[ARM Stable Update] 2021-12-13 - Firefox, KDE Gear, Thunderbird, LibreOffice, ICU and Kernels",
+      "Category" : "ARM Stable Updates",
+      "PublishedDate" : "2021-12-13T19:40:29Z",
+      "PublishedDateUnix" : 1639424429,
+      "NotificationSent" : true
+    },
+    {
+      "GUID" : "forum.manjaro.org-topic-94761",
+      "URL" : "https://forum.manjaro.org/t/manjaro-arm-21-12-released/94761",
+      "Title" : "Manjaro ARM 21.12 released!",
+      "Category" : "ARM Releases",
+      "PublishedDate" : "2021-12-15T11:53:28Z",
+      "PublishedDateUnix" : 1639569208,
+      "NotificationSent" : true
+    },
+    {
+      "GUID" : "forum.manjaro.org-topic-94951",
+      "URL" : "https://forum.manjaro.org/t/manjaro-arm-beta-20-with-phosh-pinephone-pinephonepro/94951",
+      "Title" : "Manjaro ARM Beta 20 with Phosh (PinePhone / PinephonePro)",
+      "Category" : "ARM Releases",
+      "PublishedDate" : "2021-12-16T12:53:28Z",
+      "PublishedDateUnix" : 1639659208,
+      "NotificationSent" : true
+    },
+    {
+      "GUID" : "forum.manjaro.org-topic-95568",
+      "URL" : "https://forum.manjaro.org/t/manjaro-arm-beta-9-with-plasma-mobile-pinephone-pinephone-pro/95568",
+      "Title" : "Manjaro ARM Beta 9 with Plasma Mobile (PinePhone / PinePhone Pro)",
+      "Category" : "ARM Releases",
+      "PublishedDate" : "2021-12-20T14:57:50Z",
+      "PublishedDateUnix" : 1640012270,
+      "NotificationSent" : true
+    }
+  ]
+}

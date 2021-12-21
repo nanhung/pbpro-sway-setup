@@ -1,224 +1,210 @@
-// Global 
+// =============================================================================
+//
+// Waybar configuration
+//
+// Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
+//
+// =============================================================================
+
 {
-	"layer": "top",   
-      	"position": "top",
-	// If height property would be not present, it'd be calculated dynamically
-     "height": 30,
-     "width" : 10,
- 
-    	"modules-left": [
-        	"custom/launcher",
-        	"sway/workspaces",
-        	"sway/mode",
-	],
- 
-	"modules-center": [     
-      	],
- 
-    	"modules-right": [
-                "network",
-	        "idle_inhibitor",
-	        "memory",
-	        "cpu",
-	        // "custom/weather",
-	        "pulseaudio",
-	        "custom/keyboard-layout",
-	        "battery",
-                //"custom/PBPbattery",
-	        "backlight#icon",
-                "backlight#value",
-	        "clock",
-	        "tray",
-                "custom/weather",
-	        "custom/power",
-     	],
- 
-// Modules
+    // -------------------------------------------------------------------------
+    // Global configuration
+    // -------------------------------------------------------------------------
 
+    "layer": "top",
 
-"idle_inhibitor": {
-  "format": "{icon} ",
-  "format-icons":{
-      "activated": "",
-      "deactivated": ""
+    // If height property would be not present, it'd be calculated dynamically
+    "height": 30,
 
-   }
-},
- 
-"battery": {
-    	"states": {
-      		// "good": 95,
-      		"warning": 30,
-      		"critical": 15
-	},
-    	"format": "{capacity}% {icon}",
-    	"format-charging": "{capacity}% ",
-    	"format-plugged": "{capacity}% ",
-    	 // "format-good": "", // An empty format will hide the module
-    	// "format-full": "",
-    	"format-icons": ["", "", "", "", ""]
-},
+    "modules-left": [
+        "custom/menu",
+        "sway/workspaces",
+        "custom/scratchpad",
+        "sway/mode"
+    ],
+    "modules-center": [
+        "sway/window"
+    ],
+    "modules-right": [
+        "network",
+        "bluetooth",
+        "cpu",
+        "memory",
+        "battery",                  // use for compliant batteries
+        "backlight",
+        "idle_inhibitor",
+        "pulseaudio",
+        "custom/pacman",
+        "tray",
+        "custom/help",
+        "clock"
+    ],
 
-"custom/PBPbattery": {
-    	"exec": "~/.config/waybar/scripts/PBPbattery.sh",
-    	"format": "{}",
-},
- 
- 
-"clock": {
-      	"interval": 10,
-      	"format-alt": " {:%e %b %Y}", // Icon: calendar-alt
-      	"format": "{:%H:%M}",
-      	"tooltip-format": "{:%e %B %Y}"
-},
- 
-"cpu": {
-        "interval": 5,
-        "format": "  {usage}% ({load})", // Icon: microchip
+    // -------------------------------------------------------------------------
+    // Modules
+    // -------------------------------------------------------------------------
+
+    "battery": {
+        "interval": 60,
         "states": {
-        "warning": 70,
-        "critical": 90,
+            "warning": 30,
+            "critical": 15
         },
-        "on-click": "xfce4-terminal -e 'htop'",
-},
- 
-"custom/keyboard-layout": {
-      	"exec": "swaymsg -t get_inputs | grep -m1 'xkb_active_layout_name' | cut -d '\"' -f4",
-      	// Interval set only as a fallback, as the value is updated by signal
-      	"interval": 30,
-      	"format": "  {}", // Icon: keyboard
-      	// Signal sent by Sway key binding (~/.config/sway/key-bindings)
-      	"signal": 1, // SIGHUP
-      	"tooltip": false,
-        "on-click": "~/.config/waybar/scripts/keyhint.sh",
-},
- 
-"memory": {
-        "interval": 5,
-        "format": " {}%", // Icon: memory
-        "on-click": "xfce4-terminal -e 'htop'", 
+        "format-charging": " {icon} {capacity}%", // Icon: bolt
+        "format": "{icon} {capacity}%",
+        "format-icons": [
+            "", // Icon: battery-empty
+            "", // Icon: battery-quarter
+            "", // Icon: battery-half
+            "", // Icon: battery-three-quarters
+            ""  // Icon: battery-full
+        ],
+        "tooltip": true
+    },
+
+    "clock": {
+        "interval": 60,
+        "format": " {:%e %b %Y %H:%M}", // Icon: calendar-alt
+        "tooltip": true,
+        "tooltip-format": "<big>{:%B %Y}</big>\n<tt>{calendar}</tt>",
+        "on-click": "swaymsg exec \\$calendar"
+    },
+
+    "cpu": {
+        "interval": 10,
+        "format": " {usage}%", // Icon: microchip
         "states": {
-            	"warning": 70,
-            	"critical": 90
-        }
-},
- 
-"network": {
-      	"interval": 5,
-        "format-wifi": "  {essid} ({signalStrength}%)", // Icon: wifi
-        "format-ethernet": "  {ifname}: {ipaddr}/{cidr}", // Icon: ethernet
-        "format-disconnected": "⚠  Disconnected",
+            "warning": 70,
+            "critical": 90
+        },
+        "on-click": "swaymsg exec \"\\$term_float_landscape \\$cpu_mon\""
+    },
+
+    "memory": {
+        "interval": 10,
+        "format": " {}%", // Icon: memory
+        "states": {
+            "warning": 70,
+            "critical": 90
+        },
+        "on-click": "swaymsg exec \"\\$term_float_landscape \\$mem_mon\""
+    },
+
+    "network": {
+        "interval": 30,
+        "format-wifi": " {essid} ({signalStrength}%)", // Icon: wifi
+        "format-ethernet": " {ifname}", // Icon: ethernet
+        "format-disconnected": "⚠ Disconnected",
         "tooltip-format": "{ifname}: {ipaddr}",
-        "on-click": "xfce4-terminal -e 'nmtui'",
-},
-"network#vpn": {
-            "interface": "tun0",
-            "format": "  {essid} ({signalStrength}%)",
-            "format-disconnected": "⚠  Disconnected",
-           "tooltip-format": "{ifname}: {ipaddr}/{cidr}",          
-},
- 
-"sway/mode": {
-     	"format": "{}",
+        "on-click": "swaymsg exec \\$term_float_portrait nmtui"
+    },
+
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>",
         "tooltip": false
-},
- 
-"sway/window": {
+    },
+
+    "sway/window": {
         "format": "{}",
         "max-length": 120
-},
- 
-"sway/workspaces": {
-         "disable-scroll": true,
-         "disable-markup" : false,
-         "all-outputs": true,
-         "format": "  {icon}  ",
-         //"format":"{icon}",
-         "format-icons": {
-             "1": "",
-             "2": "",
-             "3": "",
-             "4": "",
-          }
-     },
-"pulseaudio": {
-    	"scroll-step": 1, // %, can be a float
-    	"format": "{volume}% {icon}",
-    	"format-bluetooth": "{volume}% {icon}  {format_source}",
-    	"format-bluetooth-muted": " {icon}  {format_source}",
-    	"format-muted": "婢 {format_source}",
-    	"format-source": "{volume}% ",
-    	"format-source-muted": "",
-    	"format-icons": {
-      		"headphone": "",
-      		"hands-free": "וֹ",
-      		"headset": "  ",
-      		"phone": "",
-      		"portable": "",
-      		"car": "",
-      		"default": [""]
-	},
-    	"on-click": "pavucontrol",
-    	"on-scroll-up": "pamixer -ui 2",
-    	"on-scroll-down": "pamixer -ud 2",
-},
- 
-"custom/weather": {
-    	"exec": "~/.config/waybar/scripts/weather.sh",
-    	"format": "{text} {icon}",
-    	"return-type": "json",
-    	"interval": 600,
-        "tooltip-format": "{tooltip}"
-},
+    },
 
-"tray": {
-       	"icon-size": 18,
-       	"spacing":10,
- },
- 
-"backlight#icon": {
-    	"format": "{icon}",
-    	"format-icons": [""],
-    	"on-scroll-down": "brightnessctl -c backlight set 1%-",
-    	"on-scroll-up": "brightnessctl -c backlight set +1%"
-},
+    "sway/workspaces": {
+        "all-outputs": false,
+        "disable-scroll": true,
+        "format": "{name}"
+    },
 
-"backlight#value" :{
-     "format": "{percent}%",
-     "on-scroll-down": "brightnessctl -c backlight set 1%-",
-     "on-scroll-up": "brightnessctl -c backlight set +1%"
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": ["", ""],
+        "on-scroll-down": "light -A 1",
+        "on-scroll-up": "light -U 1"
+    },
 
-},
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
 
-"custom/firefox": {
-    	"format": " ",
-    	"on-click": "exec firefox",
-    	"tooltip": false
-},
- 
-"custom/terminal": {
-    	"format": " ",
-    	"on-click": "exec alacritty",
-    	"tooltip": false
-},
- 
-"custom/files": {
-    	"format": " ",
-    	"on-click": "exec thunar",
-    	"tooltip": false
-},
- 
-"custom/launcher": {
-    	"format":" ",
-    	"on-click": "exec wofi -c ~/.config/wofi/config -I",
-    	"tooltip": false,
-},
- 
-"custom/power": {
-    	"format":"⏻",
-    	"on-click": "exec ~/.config/waybar/scripts/power-menu.sh",
-    	"tooltip": false,
-    	},
+    "pulseaudio": {
+        //"scroll-step": 1,
+        "format": "{icon} {volume}%   {format_source}",
+        "format-bluetooth": "{icon} {volume}%",
+        "format-muted": "",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "on-click": "swaymsg exec \\$pulseaudio"
+    },
 
+    "temperature": {
+      "critical-threshold": 90,
+      "interval": 30,
+      "format": "{icon} {temperatureC}°C",
+      "format-icons": [
+          "", // Icon: temperature-empty
+          "", // Icon: temperature-quarter
+          "", // Icon: temperature-half
+          "", // Icon: temperature-three-quarters
+          ""  // Icon: temperature-full
+      ],
+      "tooltip": true
+    },
+
+    "tray": {
+        "icon-size": 21,
+        "spacing": 5
+    },
+
+    "custom/pacman": {
+        "format": " {}",
+        "interval": 3600,
+        "exec-if": "[ $(checkupdates | wc -l) -gt 0 ]",
+        "exec": "pamac checkupdates | wc -l",
+        "on-click": "pamac-manager --updates",
+    },
+
+    "custom/menu": {
+        "format": "",
+        "on-click": "swaymsg exec \\$app_menu",
+        "tooltip": false
+    },
+
+    "custom/help": {
+        "format": "ﲉ",
+        "on-click": "swaymsg exec \\$help",
+        "tooltip": false
+    },
+
+    "bluetooth": {
+        "format": "{icon}",
+        "interval": 30,
+        "format-icons": {
+            "enabled": "",
+            "disabled": ""
+        },
+        "on-click": "blueman-manager",
+        "tooltip-format": "{}"
+    },
+    "custom/scratchpad": {
+        "interval": 10,
+        "return-type": "json",
+        "format" : "{icon}",
+        "format-icons": {
+            "one": "",
+            "many": ""
+        },
+        "exec": "scratchpad.sh",
+        "on-click": "swaymsg 'scratchpad show'"
+    }
 }
-
