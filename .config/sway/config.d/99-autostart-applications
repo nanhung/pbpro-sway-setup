@@ -15,4 +15,4 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id mako
 exec --no-startup-id foot --config=$theme/foot.ini --server
 exec --no-startup-id dex --autostart --environment gnome --term $term
-exec --no-startup-id python ~/.config/sway/autosplit.py
+exec --no-startup-id exec autotiling -w 1 3 5 7 9
