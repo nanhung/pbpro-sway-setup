@@ -4,6 +4,10 @@
 #
 ## Launch // Terminal ##
 bindsym $mod+Return exec $term
+bindsym $mod+Shift+Return exec nautilus
+
+bindsym $mod+t exec telegram-desktop
+bindsym $mod+q exec qutebrowser
 
 ## Action // Kill focused window ##
 bindsym $mod+Shift+q kill
