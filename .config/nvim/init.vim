@@ -15,11 +15,11 @@ Plug 'roxma/nvim-yarp'               " remote plugin framework required for ncm2
 Plug 'ncm2/ncm2-bufword'             " complete words in buffer
 Plug 'ncm2/ncm2-path'                " complete paths
 Plug 'ncm2/ncm2-jedi'                " Python completion
-Plug 'jalvesaq/Nvim-R'               " https://github.com/jalvesaq/Nvim-R/blob/master/doc/Nvim-R.txt
+Plug 'jalvesaq/Nvim-R'
 Plug 'gaalcaras/ncm-R'
 call plug#end()
 
-" ncm2 
+" ncm2
 autocmd BufEnter * call ncm2#enable_for_buffer()      " enable ncm2 for all buffers
 set completeopt=noinsert,menuone,noselect             " IMPORTANT: :help Ncm2PopupOpen for more information
 let g:python3_host_prog='/usr/bin/python3'            " ncm2-jedi
@@ -33,6 +33,13 @@ set background=dark
 "set termguicolors
 
 " General settings
-set number 
+set number
 set mouse=i                   " Enable mouse support in insert mode.
 
+" Tabs & Navigation
+map <leader>nt :tabnew<cr>    " To create a new tab.
+map <leader>to :tabonly<cr>     " To close all other tabs (show only the current tab).
+map <leader>tc :tabclose<cr>    " To close the current tab.
+map <leader>tm :tabmove<cr>     " To move the current tab to next position.
+map <leader>tn :tabn<cr>        " To swtich to next tab.
+map <leader>tp :tabp<cr>        " To switch to previous tab.
