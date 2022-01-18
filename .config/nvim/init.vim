@@ -25,7 +25,10 @@ let g:python3_host_prog='/usr/bin/python3'            " ncm2-jedi
 " nerdtree settings
 map <C-n> :NERDTreeToggle<CR>
 
+" Theme settings
 colorscheme one
 set background=dark
 set termguicolors
+
+" General settings
 set number 
