@@ -1,4 +1,4 @@
-" https://www.youtube.com/watch?v=gfa2_6OeOkk
+" htps://www.youtube.com/watch?v=gfa2_6OeOkk
 " https://github.com/junegunn/vim-plug
 " pip3 install neovim
 
@@ -15,6 +15,8 @@ Plug 'roxma/nvim-yarp'               " remote plugin framework required for ncm2
 Plug 'ncm2/ncm2-bufword'             " complete words in buffer
 Plug 'ncm2/ncm2-path'                " complete paths
 Plug 'ncm2/ncm2-jedi'                " Python completion
+Plug 'jalvesaq/Nvim-R'               " https://github.com/jalvesaq/Nvim-R/blob/master/doc/Nvim-R.txt
+Plug 'gaalcaras/ncm-R'
 call plug#end()
 
 " ncm2 
@@ -28,7 +30,9 @@ map <C-n> :NERDTreeToggle<CR>
 " Theme settings
 colorscheme one
 set background=dark
-set termguicolors
+"set termguicolors
 
 " General settings
 set number 
+set mouse=i                   " Enable mouse support in insert mode.
+
