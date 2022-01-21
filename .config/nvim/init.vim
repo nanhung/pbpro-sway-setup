@@ -1,6 +1,4 @@
-" htps://www.youtube.com/watch?v=gfa2_6OeOkk
 " https://github.com/junegunn/vim-plug
-" pip3 install neovim
 
 call plug#begin('~/.vim/plugged')
 Plug 'rakr/vim-one'
