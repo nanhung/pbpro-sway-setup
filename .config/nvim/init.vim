@@ -15,6 +15,7 @@ Plug 'roxma/nvim-yarp'               " remote plugin framework required for ncm2
 Plug 'jalvesaq/Nvim-R'
 Plug 'gaalcaras/ncm-R'
 Plug 'karoliskoncevicius/vim-sendtowindow'
+Plug 'instant-markdown/vim-instant-markdown'
 call plug#end()
 
 " ncm2
