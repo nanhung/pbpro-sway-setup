@@ -16,6 +16,7 @@ Plug 'jalvesaq/Nvim-R'
 Plug 'gaalcaras/ncm-R'
 Plug 'karoliskoncevicius/vim-sendtowindow'
 Plug 'instant-markdown/vim-instant-markdown'
+Plug 'dense-analysis/ale' 
 call plug#end()
 
 " ncm2
@@ -26,14 +27,36 @@ let g:python3_host_prog='/usr/bin/python3'            " ncm2-jedi
 " nerdtree settings
 map <C-n> :NERDTreeToggle<CR>
 
+" Ale Linting
+let g:ale_sign_column_always=1
+let g:ale_lint_on_enter=1
+let g:ale_lint_on_text_changed='always'
+let g:ale_echo_msg_error_str='E'
+let g:ale_echo_msg_warning_str='W'
+let g:ale_echo_msg_format='[%linter%] %s [%severity%]: [%...code...%]'
+let g:ale_linters={'python': ['flake8'], 'r': ['lintr']}
+let g:ale_fixers={'python': ['black']}
+
 " Theme settings
 colorscheme one
 set background=dark
-"set termguicolors
+set termguicolors
 
 " General settings
 set number
 set mouse=i                   " Enable mouse support in insert mode.
+
+" Copy to clipboard
+vnoremap  <leader>y  "+y
+nnoremap  <leader>Y  "+yg_
+nnoremap  <leader>y  "+y
+nnoremap  <leader>yy  "+yy
+
+" Paste from clipboard
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
+vnoremap <leader>p "+p
+vnoremap <leader>P "+P
 
 " Tabs & Navigation
 map <leader>nt :tabnew<cr>    " To create a new tab.
