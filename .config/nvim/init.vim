@@ -43,8 +43,15 @@ set background=dark
 set termguicolors
 
 " General settings
-set number
-set mouse=i                   " Enable mouse support in insert mode.
+set mouse=i                     " Enable mouse support in insert mode.
+set backspace=indent,eol,start  " To make backscape work in all conditions.
+set ma                          " To set mark a at current cursor location.
+set number                      " To switch the line numbers on.
+set expandtab                   " To enter spaces when tab is pressed.
+set smarttab                    " To use smart tabs.
+set autoindent                  " To copy indentation from current line 
+                                " when starting a new line.
+set si                          " To switch on smart indentation.
 
 " Copy to clipboard
 vnoremap  <leader>y  "+y
