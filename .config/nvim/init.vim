@@ -67,10 +67,13 @@ noremap <silent> <C-Down> :resize -3<CR>
 map <Leader>hh <C-w>t<C-w>H
 map <Leader>kk <C-w>t<C-w>K
 " Start terminals for R and Python sessions '\tr' or '\tp'
-map <Leader>tr :new term://bash<CR>iR<CR><C-\><C-n><C-w>k
-map <Leader>tp :new term://bash<CR>ipython3<CR><C-\><C-n><C-w>k
-map <Leader>tt :new term://bash<CR>i<CR><C-\><C-n><C-w>k
+map <Leader>tr :new term://bash<CR>iradian<CR><C-\><C-n><C-w><C-j>k
+map <Leader>tp :new term://bash<CR>ipython3<CR><C-\><C-n><C-w><C-j>k
+map <Leader>tt :new term://bash<CR>i<CR><C-\><C-n><C-w><C-j>k
 
+" Buffer
+map <Leader>nn :bnext<CR>
+" <C-6> buffer switch
 
 " General settings
 set backspace=indent,eol,start  " To make backscape work in all conditions.
@@ -86,16 +89,19 @@ set shiftwidth=2 	        " The size of an indent
 set updatetime=100  	        " set update time for gitgutter update
 set noswapfile                  " no swap
 set clipboard=unnamedplus       " copy/paste between vim and other programs.
-set colorcolumn=60              " vertical line to indicate line number
+set colorcolumn=80              " vertical line to indicate line number
+set foldmethod=syntax
 " set vim-r-plugin to 
 let r_indent_align_args = 0
 " Set vim-r-plugin to mimics ess :
 let r_indent_ess_comments = 0
 let r_indent_ess_compatible = 0
+" Set syntax folding in R
+let r_syntax_folding = 1 "zR: Open all, zM: Close all , zc: close current
 
 " Select all
 map <C-a> <esc>ggVG<CR>
 
 " Move line up/down: ddkp/ddp
-" Open R (\rf) and run line (\d)
+" Open R (\rf): run line (\d), selection (\ss)
 " Select and replace all: :%s/SearchWord/ReplaceWord
